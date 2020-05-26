@@ -129,7 +129,7 @@ public class Model {
 				DefaultEdge edge=e.getEdge(); //(a,b) : ho scoperto 'a' partendo da 'b' oppure 'b' da 'a'
 				Fermata a=graph.getEdgeSource(edge);
 				Fermata b=graph.getEdgeTarget(edge);
-				if(albero.containsKey(a)) {
+				if(albero.containsKey(a) && !albero.containsKey(b)) {
 					albero.put(b,a);
 				}else {
 					albero.put(a,b);
